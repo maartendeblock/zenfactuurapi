@@ -1,0 +1,7 @@
+{
+  "name": "maartendeblock/zenfactuurapi",
+  "description": "PHP service to connect to the Zenfactuur API",
+  "require": {
+    "php": ">=7.4"
+  }
+}
