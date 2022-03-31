@@ -1,22 +1,19 @@
 <?php
 
 use GuzzleHttp\Exception\GuzzleException;
-use MaartenDeblock\zenfactuurapi\Apis\ApiToken;
-use MaartenDeblock\zenfactuurapi\Apis\Customer;
+use MaartenDeBlock\Tests\Config;
 
 require 'vendor/autoload.php';
 
-$apiToken = 'write_token_here_to_test';
-
-$api = new \MaartenDeBlock\ZenFactuurApi\Apis\Bill($apiToken);
+$api = new \MaartenDeBlock\ZenFactuurApi\Apis\Customer(Config::API_TOKEN);
 
 try {
-    var_dump($api->getAllAccountAssociatedWithOwnerAccount());
-//    var_dump($api->customizeCustomer(373424, [
-//        'client' => [
-//            'type_id' => 0,
-//            'name' => 'Sohel From Api2'
-//        ]]));
+//    var_dump($api->getAllAccountAssociatedWithOwnerAccount());
+    var_dump($api->createCustomer([
+        'client' => [
+            'type_id' => 0,
+            'name' => 'Sohel From Api2'
+        ]]));
 } catch (GuzzleException $e) {
     var_dump($e->getMessage());
 }
