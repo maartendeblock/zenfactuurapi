@@ -1,7 +1,14 @@
 {
   "name": "maartendeblock/zenfactuurapi",
   "description": "PHP service to connect to the Zenfactuur API",
+  "autoload": {
+    "psr-4": {
+      "MaartenDeBlock\\ZenFactuurApi\\": "src/"
+    }
+  },
   "require": {
-    "php": ">=7.4"
+    "php": "^7.2.5 || ^8.0",
+    "guzzlehttp/guzzle": "^7.4",
+    "ext-json": "*"
   }
 }
