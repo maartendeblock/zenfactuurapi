@@ -86,12 +86,12 @@ abstract class ZenFactuurApi
         ]);
     }
 
-  /**
-   *
-   * @param ResponseInterface\ $response
-   * @return array
-   */
-    protected function returnBody($response){
-      return json_decode($response->getBody());
+    /**
+     * @param ResponseInterface $response
+     * @return mixed
+     */
+    protected function returnBody(ResponseInterface $response)
+    {
+        return json_decode($response->getBody());
     }
 }
