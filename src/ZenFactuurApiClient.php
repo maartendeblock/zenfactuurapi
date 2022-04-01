@@ -4,7 +4,7 @@ namespace MaartenDeBlock\ZenFactuurApi;
 
 use MaartenDeBlock\ZenFactuurApi\Apis;
 
-class ZenfactuurApiClient
+class ZenFactuurApiClient
 {
   /**
    * @var Apis\ApiToken
