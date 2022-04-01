@@ -1,6 +1,7 @@
 {
   "name": "maartendeblock/zenfactuurapi",
   "description": "PHP service to connect to the Zenfactuur API",
+  "license": "GPL-3.0",
   "autoload": {
     "psr-4": {
       "MaartenDeBlock\\ZenFactuurApi\\": "src/",
