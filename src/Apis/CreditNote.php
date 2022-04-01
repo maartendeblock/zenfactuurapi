@@ -15,11 +15,11 @@ class CreditNote extends ZenFactuurApi
      * @param int|null $page
      * @param int|null $perPage
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getAllCreditNotes(int $page = null, int $perPage = null)
+    public function getAllCreditNotes(int $page = null, int $perPage = null): array
     {
         $response = $this->makeGetRequest(self::GET_LIST_OF_ALL_CREDIT_NOTE_URL, [
             'page' => $page,
@@ -32,11 +32,11 @@ class CreditNote extends ZenFactuurApi
     /**
      * @param int $id
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getCreditNote(int $id)
+    public function getCreditNote(int $id): array
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_CREDIT_NOTE_URL));
 
@@ -55,11 +55,11 @@ class CreditNote extends ZenFactuurApi
      *
      * @param array $postData
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function createCreditNote(array $postData)
+    public function createCreditNote(array $postData): array
     {
         $response = $this->makePostRequest(self::GET_LIST_OF_ALL_CREDIT_NOTE_URL, $postData);
 
@@ -76,11 +76,11 @@ class CreditNote extends ZenFactuurApi
      *
      * For full list of available fields visit - https://app.zenfactuur.be/api_docs/v2/credit_notes/send_by_email.en.html
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function sendInvoiceViaEmailToCustomer(int $id, array $emailData)
+    public function sendInvoiceViaEmailToCustomer(int $id, array $emailData): array
     {
         $response = $this->makePostRequest(str_replace(':id', $id, self::SEND_CREDIT_NOTE_VIA_EMAIL_URL), $emailData);
 

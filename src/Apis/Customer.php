@@ -16,11 +16,11 @@ class Customer extends ZenFactuurApi
      * @param int|null $page
      * @param int|null $perPage
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getAllCustomers(int $page = null, int $perPage = null)
+    public function getAllCustomers(int $page = null, int $perPage = null): array
     {
         $response = $this->makeGetRequest(self::GET_LIST_OF_CUSTOMER_URL, [
             'page' => $page,
@@ -35,11 +35,11 @@ class Customer extends ZenFactuurApi
      * @param string $phone
      * @param int|null $page
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function searchAllCustomers(string $q = '', string $phone = '', int $page = null)
+    public function searchAllCustomers(string $q = '', string $phone = '', int $page = null): array
     {
         $response = $this->makeGetRequest(self::SEARCH_ALL_CUSTOMER_URL, [
             'q' => $q,
@@ -53,11 +53,11 @@ class Customer extends ZenFactuurApi
     /**
      * @param int $id
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getCustomer(int $id)
+    public function getCustomer(int $id): array
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_CUSTOMER_URL));
 
@@ -73,11 +73,11 @@ class Customer extends ZenFactuurApi
      *
      * @param array $postData
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function createCustomer(array $postData)
+    public function createCustomer(array $postData): array
     {
         $response = $this->makePostRequest(self::GET_LIST_OF_CUSTOMER_URL, $postData);
 
@@ -94,11 +94,11 @@ class Customer extends ZenFactuurApi
      * @param int $id
      * @param array $updatedData
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function customizeCustomer(int $id, array $updatedData)
+    public function customizeCustomer(int $id, array $updatedData): array
     {
         $response = $this->makePutRequest(str_replace(':id', $id, self::SPECIFIC_CUSTOMER_URL), $updatedData);
 
@@ -108,11 +108,11 @@ class Customer extends ZenFactuurApi
     /**
      * @param string $vatNumber
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function checkVatNumberIsValid(string $vatNumber)
+    public function checkVatNumberIsValid(string $vatNumber): array
     {
         $response = $this->makeGetRequest(self::VALID_VAT_NUMBER_URL, [
             'vat_number' => $vatNumber

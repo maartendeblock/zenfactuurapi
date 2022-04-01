@@ -15,11 +15,11 @@ class Project extends ZenFactuurApi
      * @param int|null $page
      * @param int|null $perPage
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getAllProjects(int $page = null, int $perPage = null)
+    public function getAllProjects(int $page = null, int $perPage = null): array
     {
         $response = $this->makeGetRequest(self::GET_LIST_OF_PROJECT_URL, [
             'page' => $page,
@@ -33,11 +33,11 @@ class Project extends ZenFactuurApi
      * @param string $q
      * @param int|null $page
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function searchAllProjects(string $q = '', int $page = null)
+    public function searchAllProjects(string $q = '', int $page = null): array
     {
         $response = $this->makeGetRequest(self::SEARCH_ALL_PROJECT_URL, [
             'q' => $q,
@@ -50,11 +50,11 @@ class Project extends ZenFactuurApi
     /**
      * @param int $id
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getProject(int $id)
+    public function getProject(int $id): array
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_PROJECT_URL));
 
@@ -70,11 +70,11 @@ class Project extends ZenFactuurApi
      *
      * @param array $postData
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function createProject(array $postData)
+    public function createProject(array $postData): array
     {
         $response = $this->makePostRequest(self::GET_LIST_OF_PROJECT_URL, $postData);
 
@@ -91,11 +91,11 @@ class Project extends ZenFactuurApi
      * @param int $id
      * @param array $updatedData
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function modifyProject(int $id, array $updatedData)
+    public function modifyProject(int $id, array $updatedData): array
     {
         $response = $this->makePutRequest(str_replace(':id', $id, self::SPECIFIC_PROJECT_URL), $updatedData);
 

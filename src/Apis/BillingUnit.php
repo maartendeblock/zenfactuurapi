@@ -12,11 +12,11 @@ class BillingUnit extends ZenFactuurApi
 
     /**
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getListOfBillingUnits()
+    public function getListOfBillingUnits(): array
     {
         $response = $this->makeGetRequest(self::GET_LIST_OF_BILLING_UNIT_URL);
 
@@ -26,11 +26,11 @@ class BillingUnit extends ZenFactuurApi
     /**
      * @param int $id
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getBillingUnit(int $id)
+    public function getBillingUnit(int $id): array
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_BILLING_UNIT_URL));
 

@@ -11,11 +11,11 @@ class QuotationNumber extends ZenFactuurApi
 
     /**
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getNextQuotationNumber()
+    public function getNextQuotationNumber(): array
     {
         $response = $this->makeGetRequest(self::NEXT_QUOTATION_SERIAL_NUMBER_URL);
 

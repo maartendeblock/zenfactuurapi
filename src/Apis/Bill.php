@@ -13,11 +13,11 @@ class Bill extends ZenFactuurApi
      *
      * @param int|null $page
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getAllAccountAssociatedWithOwnerAccount(int $page = null)
+    public function getAllAccountAssociatedWithOwnerAccount(int $page = null): array
     {
         $response = $this->makeGetRequest(self::GET_ALL_ACCOUNT_ASSOCIATED_WITH_OWNER_ACCOUNT_URL, [
             'page' => $page

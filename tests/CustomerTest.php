@@ -41,7 +41,7 @@ class CustomerTest extends TestCase
                     'name' => $name
                 ]
             ]);
-            $this->assertEquals($name, $customer->name);
+            $this->assertEquals($name, $customer['name']);
         } catch (GuzzleException $e) {
             $this->fail($e->getMessage());
         }

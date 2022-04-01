@@ -14,11 +14,11 @@ class VatPercentage extends ZenFactuurApi
      *
      * For list of available countries visit - https://app.zenfactuur.be/api_docs/v2/vat_rates/index.en.html
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getListOfVatPercentageUsedInEuropeanCountries(string $country = '')
+    public function getListOfVatPercentageUsedInEuropeanCountries(string $country = ''): array
     {
         $urlParams = [];
         if (!empty($country)) {

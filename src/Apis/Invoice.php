@@ -16,11 +16,11 @@ class Invoice extends ZenFactuurApi
      * @param int|null $page
      * @param int|null $perPage
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getAllInvoices(int $page = null, int $perPage = null)
+    public function getAllInvoices(int $page = null, int $perPage = null): array
     {
         $response = $this->makeGetRequest(self::GET_LIST_OF_All_INVOICES_URL, [
             'page' => $page,
@@ -33,11 +33,11 @@ class Invoice extends ZenFactuurApi
     /**
      * @param int|null $page
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getAllUnpaidInvoices(int $page = null)
+    public function getAllUnpaidInvoices(int $page = null): array
     {
         $response = $this->makeGetRequest(self::GET_LIST_OF_UNPAID_INVOICES_URL, [
             'page' => $page
@@ -49,11 +49,11 @@ class Invoice extends ZenFactuurApi
     /**
      * @param int $id
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getInvoice(int $id)
+    public function getInvoice(int $id): array
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_INVOICE_URL));
 
@@ -72,11 +72,11 @@ class Invoice extends ZenFactuurApi
      *
      * @param array $postData
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function createInvoice(array $postData)
+    public function createInvoice(array $postData): array
     {
         $response = $this->makePostRequest(self::GET_LIST_OF_All_INVOICES_URL, $postData);
 
@@ -93,11 +93,11 @@ class Invoice extends ZenFactuurApi
      *
      * For full list of available fields visit - https://app.zenfactuur.be/api_docs/v2/invoices/send_by_email.en.html
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function sendInvoiceViaEmailToCustomer(int $id, array $emailData)
+    public function sendInvoiceViaEmailToCustomer(int $id, array $emailData): array
     {
         $response = $this->makePostRequest(str_replace(':id', $id, self::SEND_INVOICE_VIA_EMAIL_URL), $emailData);
 

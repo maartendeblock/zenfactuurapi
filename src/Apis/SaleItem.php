@@ -13,11 +13,11 @@ class SaleItem extends ZenFactuurApi
     /**
      * @param int|null $page
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getListOfSaleItems(int $page = null)
+    public function getListOfSaleItems(int $page = null): array
     {
         $response = $this->makeGetRequest(self::GET_LIST_OF_SALE_ITEM_URL, [
             'page' => $page
@@ -29,11 +29,11 @@ class SaleItem extends ZenFactuurApi
     /**
      * @param int $id
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getSaleItem(int $id)
+    public function getSaleItem(int $id): array
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_SALE_ITEM_URL));
 

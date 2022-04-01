@@ -20,11 +20,11 @@ class Payment extends ZenFactuurApi
      *
      * @param array $postData
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function createPaymentFromSale(array $postData)
+    public function createPaymentFromSale(array $postData): array
     {
         $response = $this->makePostRequest(self::NEW_PAYMENT_FROM_SALE_URL, $postData);
 

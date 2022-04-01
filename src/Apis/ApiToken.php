@@ -12,7 +12,7 @@ class ApiToken extends ZenFactuurApi
     /**
      * @throws GuzzleException
      */
-    public function getEmailOrUserName()
+    public function getEmailOrUserName(): array
     {
         $response = $this->makeGetRequest(self::GET_EMAIL_OR_USERNAME_URL);
 

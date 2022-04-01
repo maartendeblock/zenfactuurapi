@@ -11,11 +11,11 @@ class Country extends ZenFactuurApi
 
     /**
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getListOfStandardEuropeanCountries()
+    public function getListOfStandardEuropeanCountries(): array
     {
         $response = $this->makeGetRequest(self::GET_LIST_OF_COUNTRIES_URL);
 

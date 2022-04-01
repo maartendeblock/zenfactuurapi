@@ -14,11 +14,11 @@ class Sell extends ZenFactuurApi
     /**
      * @param int|null $page
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getAllSells(int $page = null)
+    public function getAllSells(int $page = null): array
     {
         $response = $this->makeGetRequest(self::GET_LIST_OF_SELL_URL, [
             'page' => $page,
@@ -31,11 +31,11 @@ class Sell extends ZenFactuurApi
      * @param string $q
      * @param int|null $page
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function searchAllSells(string $q = '', int $page = null)
+    public function searchAllSells(string $q = '', int $page = null): array
     {
         $response = $this->makeGetRequest(self::SEARCH_ALL_SELL_URL, [
             'q' => $q,
@@ -48,11 +48,11 @@ class Sell extends ZenFactuurApi
     /**
      * @param int $id
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getSell(int $id)
+    public function getSell(int $id): array
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_SELL_URL));
 
@@ -71,11 +71,11 @@ class Sell extends ZenFactuurApi
      *
      * @param array $postData
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function createSell(array $postData)
+    public function createSell(array $postData): array
     {
         $response = $this->makePostRequest(self::GET_LIST_OF_SELL_URL, $postData);
 

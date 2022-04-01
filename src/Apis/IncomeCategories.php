@@ -13,11 +13,11 @@ class IncomeCategories extends ZenFactuurApi
     /**
      * @param int|null $page
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getListOfRevenueCategories(int $page = null)
+    public function getListOfRevenueCategories(int $page = null): array
     {
         $response = $this->makeGetRequest(self::GET_LIST_OF_SALES_CATEGORIES_URL, [
             'page' => $page
@@ -29,11 +29,11 @@ class IncomeCategories extends ZenFactuurApi
     /**
      * @param int $id
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getRevenueCategory(int $id)
+    public function getRevenueCategory(int $id): array
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_SALES_CATEGORIES_URL));
 

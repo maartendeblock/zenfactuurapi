@@ -26,11 +26,11 @@ class TimeRegistration extends ZenFactuurApi
      *
      * @param array $postData
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function createTimeSlot(array $postData)
+    public function createTimeSlot(array $postData): array
     {
         $response = $this->makePostRequest(self::NEW_TIME_REGISTRATION_URL, $postData);
 

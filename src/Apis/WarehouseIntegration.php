@@ -20,11 +20,11 @@ class WarehouseIntegration extends ZenFactuurApi
      *
      * @param array $postData
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function linkWarehouseSetting(array $postData)
+    public function linkWarehouseSetting(array $postData): array
     {
         $response = $this->makePostRequest(self::LINK_WAREHOUSE_SETTING_URL, $postData);
 

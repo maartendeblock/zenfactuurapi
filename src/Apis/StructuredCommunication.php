@@ -13,11 +13,11 @@ class StructuredCommunication extends ZenFactuurApi
      *
      * @param string $serialNumber
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getProposalForStructuredCommunication(string $serialNumber = '')
+    public function getProposalForStructuredCommunication(string $serialNumber = ''): array
     {
         $response = $this->makeGetRequest(self::GET_PROPOSAL_FOR_STRUCTURED_COMMUNICATION_URL, [
             'serial_number' => $serialNumber

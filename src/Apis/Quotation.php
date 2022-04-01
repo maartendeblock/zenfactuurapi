@@ -14,11 +14,11 @@ class Quotation extends ZenFactuurApi
     /**
      * @param int|null $page
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getAllQuotations(int $page = null)
+    public function getAllQuotations(int $page = null): array
     {
         $response = $this->makeGetRequest(self::GET_LIST_OF_All_QUOTATION_URL, [
             'page' => $page
@@ -30,11 +30,11 @@ class Quotation extends ZenFactuurApi
     /**
      * @param int $id
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function getQuotation(int $id)
+    public function getQuotation(int $id): array
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_QUOTATION_URL));
 
@@ -53,11 +53,11 @@ class Quotation extends ZenFactuurApi
      *
      * @param array $postData
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function createQuotation(array $postData)
+    public function createQuotation(array $postData): array
     {
         $response = $this->makePostRequest(self::GET_LIST_OF_All_QUOTATION_URL, $postData);
 
@@ -74,11 +74,11 @@ class Quotation extends ZenFactuurApi
      *
      * For full list of available fields visit - https://app.zenfactuur.be/api_docs/v2/quotations/send_by_email.en.html
      *
-     * @return mixed
+     * @return array
      *
      * @throws GuzzleException
      */
-    public function sendQuotationViaEmailToCustomer(int $id, array $emailData)
+    public function sendQuotationViaEmailToCustomer(int $id, array $emailData): array
     {
         $response = $this->makePostRequest(str_replace(':id', $id, self::SEND_QUOTATION_VIA_EMAIL_URL), $emailData);
 

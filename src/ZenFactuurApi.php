@@ -88,10 +88,10 @@ abstract class ZenFactuurApi
 
     /**
      * @param ResponseInterface $response
-     * @return mixed
+     * @return array
      */
-    protected function returnBody(ResponseInterface $response)
+    protected function returnBody(ResponseInterface $response): array
     {
-        return json_decode($response->getBody());
+        return json_decode($response->getBody(), true);
     }
 }
