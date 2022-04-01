@@ -16,6 +16,6 @@ class ApiToken extends ZenFactuurApi
     {
         $response = $this->makeGetRequest(self::GET_EMAIL_OR_USERNAME_URL);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

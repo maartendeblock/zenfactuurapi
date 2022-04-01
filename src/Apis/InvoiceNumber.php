@@ -19,6 +19,6 @@ class InvoiceNumber extends ZenFactuurApi
     {
         $response = $this->makeGetRequest(self::NEXT_INVOICE_SERIAL_NUMBER_URL);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

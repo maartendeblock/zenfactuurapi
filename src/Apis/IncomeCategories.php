@@ -23,7 +23,7 @@ class IncomeCategories extends ZenFactuurApi
             'page' => $page
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -37,6 +37,6 @@ class IncomeCategories extends ZenFactuurApi
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_SALES_CATEGORIES_URL));
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

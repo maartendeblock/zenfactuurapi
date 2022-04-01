@@ -26,7 +26,7 @@ class CreditNote extends ZenFactuurApi
             'per_page' => $perPage
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -40,7 +40,7 @@ class CreditNote extends ZenFactuurApi
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_CREDIT_NOTE_URL));
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -63,7 +63,7 @@ class CreditNote extends ZenFactuurApi
     {
         $response = $this->makePostRequest(self::GET_LIST_OF_ALL_CREDIT_NOTE_URL, $postData);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -84,6 +84,6 @@ class CreditNote extends ZenFactuurApi
     {
         $response = $this->makePostRequest(str_replace(':id', $id, self::SEND_CREDIT_NOTE_VIA_EMAIL_URL), $emailData);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

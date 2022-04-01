@@ -28,6 +28,6 @@ class WarehouseIntegration extends ZenFactuurApi
     {
         $response = $this->makePostRequest(self::LINK_WAREHOUSE_SETTING_URL, $postData);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

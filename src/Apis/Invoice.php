@@ -27,7 +27,7 @@ class Invoice extends ZenFactuurApi
             'per_page' => $perPage
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -43,7 +43,7 @@ class Invoice extends ZenFactuurApi
             'page' => $page
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -57,7 +57,7 @@ class Invoice extends ZenFactuurApi
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_INVOICE_URL));
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -80,7 +80,7 @@ class Invoice extends ZenFactuurApi
     {
         $response = $this->makePostRequest(self::GET_LIST_OF_All_INVOICES_URL, $postData);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -101,6 +101,6 @@ class Invoice extends ZenFactuurApi
     {
         $response = $this->makePostRequest(str_replace(':id', $id, self::SEND_INVOICE_VIA_EMAIL_URL), $emailData);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

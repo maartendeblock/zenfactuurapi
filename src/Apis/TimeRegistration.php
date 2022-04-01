@@ -34,6 +34,6 @@ class TimeRegistration extends ZenFactuurApi
     {
         $response = $this->makePostRequest(self::NEW_TIME_REGISTRATION_URL, $postData);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

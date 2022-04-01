@@ -20,7 +20,7 @@ class BillingUnit extends ZenFactuurApi
     {
         $response = $this->makeGetRequest(self::GET_LIST_OF_BILLING_UNIT_URL);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -34,6 +34,6 @@ class BillingUnit extends ZenFactuurApi
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_BILLING_UNIT_URL));
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

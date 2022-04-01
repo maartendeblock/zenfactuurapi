@@ -23,7 +23,7 @@ class SaleItem extends ZenFactuurApi
             'page' => $page
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -37,6 +37,6 @@ class SaleItem extends ZenFactuurApi
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_SALE_ITEM_URL));
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

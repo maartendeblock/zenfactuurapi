@@ -23,6 +23,6 @@ class StructuredCommunication extends ZenFactuurApi
             'serial_number' => $serialNumber
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

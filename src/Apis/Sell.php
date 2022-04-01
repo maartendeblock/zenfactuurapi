@@ -24,7 +24,7 @@ class Sell extends ZenFactuurApi
             'page' => $page,
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -42,7 +42,7 @@ class Sell extends ZenFactuurApi
             'page' => $page
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -56,7 +56,7 @@ class Sell extends ZenFactuurApi
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_SELL_URL));
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -79,6 +79,6 @@ class Sell extends ZenFactuurApi
     {
         $response = $this->makePostRequest(self::GET_LIST_OF_SELL_URL, $postData);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

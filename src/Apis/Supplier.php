@@ -24,7 +24,7 @@ class Supplier extends ZenFactuurApi
             'page' => $page
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -42,7 +42,7 @@ class Supplier extends ZenFactuurApi
             'page' => $page
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -56,6 +56,6 @@ class Supplier extends ZenFactuurApi
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_SUPPLIER_URL));
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

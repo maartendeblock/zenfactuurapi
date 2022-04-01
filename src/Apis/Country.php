@@ -19,6 +19,6 @@ class Country extends ZenFactuurApi
     {
         $response = $this->makeGetRequest(self::GET_LIST_OF_COUNTRIES_URL);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

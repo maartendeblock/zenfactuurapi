@@ -26,7 +26,7 @@ class Project extends ZenFactuurApi
             'per_page' => $perPage
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -44,7 +44,7 @@ class Project extends ZenFactuurApi
             'page' => $page
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -58,7 +58,7 @@ class Project extends ZenFactuurApi
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_PROJECT_URL));
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -78,7 +78,7 @@ class Project extends ZenFactuurApi
     {
         $response = $this->makePostRequest(self::GET_LIST_OF_PROJECT_URL, $postData);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -99,6 +99,6 @@ class Project extends ZenFactuurApi
     {
         $response = $this->makePutRequest(str_replace(':id', $id, self::SPECIFIC_PROJECT_URL), $updatedData);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

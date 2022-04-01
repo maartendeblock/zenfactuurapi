@@ -85,4 +85,13 @@ abstract class ZenFactuurApi
             'query' => ['token' => $this->apiToken] + $urlParams
         ]);
     }
+
+  /**
+   *
+   * @param ResponseInterface\ $response
+   * @return array
+   */
+    protected function returnBody($response){
+      return json_decode($response->getBody(), TRUE);
+    }
 }

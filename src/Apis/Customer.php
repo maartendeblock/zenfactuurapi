@@ -27,7 +27,7 @@ class Customer extends ZenFactuurApi
             'per_page' => $perPage
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -47,7 +47,7 @@ class Customer extends ZenFactuurApi
             'page' => $page
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -61,7 +61,7 @@ class Customer extends ZenFactuurApi
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_CUSTOMER_URL));
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -81,7 +81,7 @@ class Customer extends ZenFactuurApi
     {
         $response = $this->makePostRequest(self::GET_LIST_OF_CUSTOMER_URL, $postData);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -102,7 +102,7 @@ class Customer extends ZenFactuurApi
     {
         $response = $this->makePutRequest(str_replace(':id', $id, self::SPECIFIC_CUSTOMER_URL), $updatedData);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -118,6 +118,6 @@ class Customer extends ZenFactuurApi
             'vat_number' => $vatNumber
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

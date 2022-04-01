@@ -28,6 +28,6 @@ class Payment extends ZenFactuurApi
     {
         $response = $this->makePostRequest(self::NEW_PAYMENT_FROM_SALE_URL, $postData);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }

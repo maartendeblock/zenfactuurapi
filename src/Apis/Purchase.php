@@ -24,7 +24,7 @@ class Purchase extends ZenFactuurApi
             'page' => $page,
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -42,7 +42,7 @@ class Purchase extends ZenFactuurApi
             'page' => $page
         ]);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -56,7 +56,7 @@ class Purchase extends ZenFactuurApi
     {
         $response = $this->makeGetRequest(str_replace(':id', $id, self::SPECIFIC_PURCHASE_URL));
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 
     /**
@@ -76,6 +76,6 @@ class Purchase extends ZenFactuurApi
     {
         $response = $this->makePostRequest(self::GET_LIST_OF_PURCHASE_URL, $postData);
 
-        return json_decode($response->getBody());
+        return $this->returnBody($response);
     }
 }
