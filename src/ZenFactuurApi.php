@@ -92,6 +92,6 @@ abstract class ZenFactuurApi
    * @return array
    */
     protected function returnBody($response){
-      return json_decode($response->getBody(), TRUE);
+      return json_decode($response->getBody());
     }
 }
