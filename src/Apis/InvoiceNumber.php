@@ -15,7 +15,7 @@ class InvoiceNumber extends ZenFactuurApi
      *
      * @throws GuzzleException
      */
-    public function getNextInvoiceSerialNumber(): array
+    public function getNextInvoiceSerialNumber(): string
     {
         $response = $this->makeGetRequest(self::NEXT_INVOICE_SERIAL_NUMBER_URL);
 
