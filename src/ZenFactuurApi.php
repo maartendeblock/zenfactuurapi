@@ -88,9 +88,9 @@ abstract class ZenFactuurApi
 
     /**
      * @param ResponseInterface $response
-     * @return array
+     * @return mixed
      */
-    protected function returnBody(ResponseInterface $response): array
+    protected function returnBody(ResponseInterface $response)
     {
         return json_decode($response->getBody(), true);
     }
